@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{graphicx, amsmath, amssymb, url, hyperref} % Required for inserting images
+\usepackage[left=1.5in, right=1.5in]{geometry}
+
+\title{STEP I - 1988}
+\author{Ciaran Barnes}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	A collection of solutions to STEP questions for my own use and also for former colleagues and friends. These are very much incomplete. I aim to complete some sporadically although I make absolutely zero promise of doing so with any sort of regular schedule. I largely do this for fun. Although I try my best, I have undoubetdly made several errors so please do use with caution. Any errors, please do let me know at \url{ccbarnesni@gmail.com}.
+\end{abstract}
+
+\newpage
+
+\begin{enumerate}
+    \item Since \(x>0\) the graph must never cross the \(y\)-axis. We then calculate the turning point
+    \[
+    h'(x) = \frac{1-\ln x}{x^2}
+    \]
+    We see that \(h'(x)=0\) when \(x=e\) only and the corresponding \(y\)-coordinate is \(1/e\). The graph must be negative for \(x<1\) since \(\ln x <0\) for \(x<1\) but \(1/x>0\) for \(0<x<1\). It is therefore increasing before the turning point so we anticipate it to be a maximum. To verify, we check the 2nd derivative
+    \[
+    h''(x) = \frac{2\ln x -3}{x^3}
+    \]
+    and see that \(h''(e)<0\) so \((e,1/e)\) is indeed a maximum. The graph must remain positive from this point onwards thus \(x=0\) is an asymptote.
+
+    To solve \(n^m=m^n\) for \(n,m \in \mathbb{N}\) we note, through rearrangement, that this is equivalent to solving
+    \[
+    \frac{\ln n}{n} = \frac{\ln m}{m}.
+    \]
+    We are thus looking for where on the graph \(h(x)\) two \(y\)-coordinates can be equal. The only possible place where this can occur is when \(1<x<e\) since this is the only region in the graph where a given point on \(h(x)\) has another corresponding point with equal \(y\)-coordinate. There is only one integer in this interval, namely, 2. We thus seek solutions to
+    \begin{align*}
+        &\frac{\ln 2}{2} = \frac{\ln x}{x} \\
+        \iff &x\ln2 = 2\ln x \\
+        \iff &2^x = x^2 \\
+    \end{align*}
+    By considering the inetersection of the graphs \(y=x^2\) and \(y=2^x\) we see that there can only be one positive point of intersection. By inspection, we see that this value is 4. Thus the only pairs \(m, n \in \mathbb{N}\) satisfying the required equation are 2 and 4.
+    
+    \item Using the chain and/or quotient rule we obtain the following. We omit the independent variable for clarity.
+    \begin{align*}
+        g &= f+\frac{1}{f} \\
+        g' &= \frac{f'f^2-f'}{f^2} \\
+        g'' &= \frac{f''f^4-f''f^2-2f(f')^2}{f^4}
+    \end{align*}
+    We see that \(g'=0\) only when \(f'f^2-f'=0\). Factorising, we see that
+    \begin{align*}
+        f'(f-1)(f+1)=0.
+    \end{align*}
+    We solve all three cases. Start with \(f'=0\). We have
+    \begin{align*}
+        \sin 2x - \cos x &= 0\\
+        2\sin x \cos x - \cos x &= 0 \\
+        \cos x (2 \sin x -1) &= 0.
+    \end{align*}
+    The only solutions to this in the interval \([0,2\pi]\) are \(\pi/2, 3\pi/2, \pi/6, 5\pi/6\). 
+    
+    We now consider when \(f=1\). We have
+    \begin{align}
+        1-2\sin^2 x+2\sin x+4&=1 \\
+        \sin^2x - \sin x - 2 &= 0 \\
+        (\sin x -2)(\sin x +1) &= 0.
+    \end{align}
+    Clearly \(\sin x =2\) has no solutions and \(\sin x =-1\) yields \(x=3\pi/2\) as the only solution.
+
+    Now we turn to \(f=-1\). In this case, we have
+    \begin{align*}
+        4+1-2\sin^2x+2\sin x &= -1 \\
+        \sin^2 x - \sin x - 3 &= 0 \\
+        \sin x & = \frac{1\pm\sqrt{13}}{2}.
+    \end{align*}
+    This also has no solutions since \(|\frac{1\pm\sqrt{13}}{2}|>1\). So we have now found all 4 stationary points.
+
+    We verify if these are maxima or minima by considering the sign of \(g''\). To ease computation we first compute the values of \(f, f', f''\) at each of the respective coordinates. Note that \(f'=0\) at all points of interest. We then find that
+    \begin{align*}
+        f(\pi/2) &= 5 \\
+        f''(\pi/2) &= 2 \\
+        f(3\pi/2) &= 1 \\
+        f''(3\pi/2) &= 6 \\
+        f(\pi/6) &= \frac{11}{2}\\
+        f''(\pi/6) &= -3\\
+        f(5\pi/6) &= \frac{11}{2} \\
+        f''(5\pi/6) &= -3
+    \end{align*}
+
+    It is then easy to compute that \(g''(\pi/2)=\frac{2(5^4)-3(5^2)}{5^4}>0\) implying a minimum. We also have
+    \[
+    g''(3\pi/2) = 0
+    \]
+    which we note, and return to later. Then
+    \[
+    g''(\pi/6) = g''(5\pi/6) = \frac{3(11/2)^2-3(11/2)^4}{(11/2)^4}>0
+    \]
+    again giving us two minimums.
+
+    We now return to the case of \(x=\pi/6\). To examine this, we look at the first derivative and find that the sign of \(g'\) depends on the sign of \(f'\) and \(f^2-1\) only. For \(\epsilon>0\) sufficiently small, we see that 
+    \[
+    f'(\pi/6\pm\epsilon) = 2\cos\Big(\frac{\pi}{6}\pm\epsilon\Big)\bigg(1-\sin \Big(\frac{\pi}{6} \pm \epsilon\Big)\bigg)>0.
+    \]
+    Then, 
+    \[
+    f^2\Big(\frac{\pi}{6}\Big)-1 = \Big(\frac{11}{2}\Big)^2 - 1 >0
+    \]
+    and so \(f^2 -1\) remains positive in some neighbourhood around \(\pi/6\). Thus \(g'\) remains positive in this region too and so we have a point of inflection.
+
+    \textit{We have 3 minimia and 1 point of inflection - something must definitely have gone wrong here. Actually, it could be due to there being asymptotes when \(f=0\)}.
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item Using integration by parts we see that
+    \begin{align*}
+        &\int_1^e \frac{\ln x}{x \, dx} \\
+        = &\Big[ - \frac{\ln x}{x} \Big]_1^e - \int_1^e - \frac{1}{x^2} \, dx \\
+        = &- \frac{1}{e} + \Big[ -\frac{1}{x}\Big]_1^e \\
+        = &-\frac{1}{e}-\frac{1}{e}+1 \\
+        = &\,1-\frac{2}{e}
+    \end{align*}
+
+    For the second integral, consider the substitution \(u=\sqrt{1+\sin x}\). Then \(du = \frac{\cos x}{2\sqrt{1+\sin x}} dx\) and \(u^2-1=\sin x\). Then we have
+    \begin{align*}
+        &\int\frac{2}{u^2-1}du \\
+        =&\int \frac{1}{u-1} - \frac{1}{u+1} du \\
+        = &\ln|u-1| - \ln|u+1| + c \\
+        = &\ln\Big|\frac{u-1}{u+1}\Big| + c \\
+        = &\ln \Big| \frac{u^2-2u+1}{u^2-1} \Big| + c \\
+        = &\ln \Big| \frac{\sin x + 2 -2\sqrt{1+\sin x}}{\sin x} \Big|+ c
+    \end{align*}
+    \item If the horizontal distance covered is \(d\) and the angle of projection is \(\theta\) then we must have
+    \[
+    d=vt\cos \theta.
+    \]
+    Vertically, if we neglect air resistance, we have
+    \[
+    h=ut\sin \theta-\frac{g}{2}t^2
+    \]
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+\end{enumerate}
+
+\end{document}

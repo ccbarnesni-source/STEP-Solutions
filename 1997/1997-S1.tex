@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx, amsmath, amssymb, url, hyperref} % Required for inserting images
+\usepackage[left=1.5in, right=1.5in]{geometry}
+
+\title{STEP I - 1997}
+\author{Ciaran Barnes}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	A collection of solutions to STEP questions for my own use and also for former colleagues and friends. These are very much incomplete. I aim to complete some sporadically although I make absolutely zero promise of doing so with any sort of regular schedule. I largely do this for fun. Although I try my best, I have undoubetdly made several errors so please do use with caution. Any errors, please do let me know at \url{ccbarnesni@gmail.com}.
+\end{abstract}
+
+\newpage
+
+\begin{enumerate}
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item The equation of motion is 
+    \[
+    -(mg+kv^2) = m\ddot{x}
+    \]
+    which may be solved as follows
+    \begin{align*}
+        -g-\frac{k}{m}v^2 = \frac{dv}{dt} \\
+        -\int dt = \int \frac{1}{g+\frac{kv^2}{m}}dv \\
+        -gt+c = \int \frac{1}{1+\frac{kv^2}{mg}} dv \\
+        -gt+c = \sqrt{
+       \frac{mg}{k}}\arctan{\Bigg( \sqrt{\frac{k}{mg}}v\Bigg)} 
+    \end{align*}
+    Applying the initial condition \(v(0)=u\) we have
+    \begin{align*}
+        \arctan{\Bigg( \sqrt{\frac{ku^2}{mg}}\Bigg)} - \arctan{\Bigg( \sqrt{\frac{kv^2}{mg}}\Bigg)} = \sqrt{\frac{kgt^2}{m}} 
+    \end{align*}
+    Taking tangents of either side and applying the compound angle formula for tan with \(\alpha =\sqrt{\frac{k}{mg}}\) we obtain
+    \begin{align*}
+        \frac{\alpha u - \alpha v}{1 + \alpha^2 uv} = \tan (\alpha gt)
+    \end{align*}
+    Rearranging for \(v\) yields
+    \begin{align*}
+        v=\frac{\alpha u - \tan {(\alpha gt)}}{\alpha(1+ \alpha u \tan{(\alpha gt)})} \\
+        v = \frac{\alpha u \cos{(\alpha gt)} - \sin{(\alpha gt)}}{\alpha(\cos{(\alpha gt)}) + \alpha u \sin{(\alpha gt)})}
+    \end{align*}
+    which is integrated to obtain
+    \begin{align*}
+        s(t) = \frac{1}{\alpha^2g}\ln|\cos{(\alpha gt)}+\alpha u \sin{(\alpha gt)}|
+    \end{align*}
+    Thus we have
+    \begin{align*}
+        v^2 = \frac{1}{\alpha^2} \cdot \frac{}{\alpha^2u^2\sin^2}
+    \end{align*}
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+\end{enumerate}
+
+\end{document}
