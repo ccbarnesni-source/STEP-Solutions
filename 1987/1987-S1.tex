@@ -60,8 +60,6 @@
     \end{align*}
     From above, we see that \(v\rightarrow0\) as \(x\rightarrow \infty\).
 
-    \textit{This doesn't have a real solution for} \(x \in (-1/\sqrt{3}, \, 1/\sqrt{3})\), \textit{is this definitely correct?}
-
     \item First observe that we can change the base on the \(n^{th}\) term as follows:
     \[
     (-1)^n\log_{2^{2^n}}e = \frac{(-1)^n\ln e}{2^n \ln 2} = \frac{(-1)^n}{2^n \ln 2}
@@ -102,9 +100,51 @@
 
     \item 
 
-    \item 
+    \item By first using the fact that \(\sin(2\pi-\theta)=-\sin(\theta)\) we can rewrite the sum, denoted \(S\), as
+    \[
+    S = \sin\bigg(\frac{2\pi}{23}\bigg) - \sin\bigg(\frac{4\pi}{23}\bigg) + \sin\bigg(\frac{6\pi}{23}\bigg) - \sin\bigg(\frac{8\pi}{23}\bigg) + \cdots + \sin\bigg(\frac{22\pi}{23}\bigg).
+    \]
+    Multiplication by \(\cos\bigg(\frac{\pi}{23}\bigg)\) and employing the product to sum identity \(2 \sin A \cos B = \sin(A+B) + \sin(A-B)\), we obtain a telescoping series:
+    \[
+    2S \cos\bigg( \frac{\pi}{23}\bigg) = \sin\bigg(\frac{\pi}{23}\bigg) + \sin\bigg(\frac{3\pi}{23}\bigg) - \sin\bigg(\frac{3\pi}{23}\bigg) + \cdots - \sin\bigg(\frac{21\pi}{23}\bigg) + \sin\bigg(\frac{21\pi}{23}\bigg) + \sin\bigg(\frac{23\pi}{23}\bigg).
+    \]
+    All terms bar the first vanish and we are left with
+    \[
+    2S \cos \bigg( \frac{\pi}{23} \bigg) = \sin\bigg(\frac{\pi}{23}\bigg)
+    \]
+    which gives us
+    \[
+    S = \frac{1}{2}\tan\bigg(\frac{\pi}{23} \bigg).
+    \]
 
-    \item 
+    The second sum does not require us to use a standard trigonometric identity in order to obtain an alternating sum. We can instead multiply immediately by \(\cos\big(\frac{2\pi}{23}\big)\) and use the same product to sum identity to obtain
+    \[
+    S = \sin(0) +\sin\bigg(\frac{4\pi}{23})-\sin\bigg(\frac{4\pi}{23}\bigg) + \cdots + \sin \bigg(\frac{44\pi}{23}\bigg) = - \sin \bigg(\frac{2\pi}{23}).
+    \]
+    It is clear from this that the second sum is in fact
+    \[
+    S = -\tan \bigg( \frac{2\pi}{23} \bigg).
+    \]
+
+    \item A na{\"i}ve application of the substitution \(x=\frac{1}{t}\) may in fact lead one to believe that the integrals are the same but this fails to account for the discontinuity of that occurs at \(x=0\) which is within the limits of integration. Both integrals can be solved by using the substitution \(x=\tan \theta\). It follows then that \(dx = \sec^2 \theta d\theta = (1+x^2) d\theta.\) We then have
+    \begin{align*}
+        &\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{1}{\sec^2 \theta} \, d \theta \\
+        = & 2 \int_{0}^{\frac{\pi}{4}} \cos^2 \theta \, d\theta \\
+        = & \int_{0}^{\frac{\pi}{4}} \cos^2\theta - 1 \, d\theta \\
+        = & \bigg[\frac{1}{2}\sin^2\theta + \theta\bigg]^\frac{\pi}{4}_0 \\
+        = & \frac{1}{2} + \frac{\pi}{4}.
+    \end{align*}
+    Here we have used the even property of \(\cos \theta \) in order to simplify the limits of integration.
+
+    The other integral is computed similarly. We find that
+    \begin{align*}
+        &\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \frac{-\tan^2 \theta}{\sec^2 \theta} \, d \theta \\
+        = & \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} -\sin^2 \theta \, d\theta \\
+        = & \int_{0}^{\frac{\pi}{4}} \cos 2\theta - 1 \, d\theta \\
+        = & \bigg[ \frac{1}{2} \sin 2\theta - \theta\bigg]_0^\frac{\pi}{4} \\
+        = & \frac{1}{2} - \frac{\pi}{4}.
+    \end{align*}
+
 
     \item 
 
